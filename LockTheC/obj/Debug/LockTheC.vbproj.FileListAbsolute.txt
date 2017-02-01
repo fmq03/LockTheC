@@ -1,0 +1,20 @@
+C:\Users\fmq\AppData\Local\Temporary Projects\LockTheC\bin\Debug\LockTheC.exe
+C:\Users\fmq\AppData\Local\Temporary Projects\LockTheC\bin\Debug\LockTheC.pdb
+C:\Users\fmq\AppData\Local\Temporary Projects\LockTheC\bin\Debug\LockTheC.xml
+C:\Users\fmq\AppData\Local\Temporary Projects\LockTheC\obj\Debug\LockTheC.Form1.resources
+C:\Users\fmq\AppData\Local\Temporary Projects\LockTheC\obj\Debug\LockTheC.Resources.resources
+C:\Users\fmq\AppData\Local\Temporary Projects\LockTheC\obj\Debug\LockTheC.vbproj.GenerateResource.Cache
+C:\Users\fmq\AppData\Local\Temporary Projects\LockTheC\obj\Debug\LockTheC.exe
+C:\Users\fmq\AppData\Local\Temporary Projects\LockTheC\obj\Debug\LockTheC.xml
+C:\Users\fmq\AppData\Local\Temporary Projects\LockTheC\obj\Debug\LockTheC.pdb
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\bin\Debug\LockTheC.exe
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\bin\Debug\LockTheC.pdb
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\bin\Debug\LockTheC.xml
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\obj\Debug\LockTheC.Form100.resources
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\obj\Debug\LockTheC.Form101.resources
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\obj\Debug\LockTheC.Formpwd.resources
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\obj\Debug\LockTheC.Resources.resources
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\obj\Debug\LockTheC.vbproj.GenerateResource.Cache
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\obj\Debug\LockTheC.exe
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\obj\Debug\LockTheC.xml
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\obj\Debug\LockTheC.pdb
