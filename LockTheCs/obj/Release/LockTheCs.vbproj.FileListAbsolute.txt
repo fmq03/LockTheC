@@ -1,0 +1,10 @@
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheCs\bin\Release\LockTheCs.exe
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheCs\bin\Release\LockTheCs.pdb
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheCs\bin\Release\LockTheCs.xml
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheCs\obj\Release\LockTheCs.Form1.resources
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheCs\obj\Release\LockTheCs.Form102.resources
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheCs\obj\Release\LockTheCs.Resources.resources
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheCs\obj\Release\LockTheCs.vbproj.GenerateResource.Cache
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheCs\obj\Release\LockTheCs.exe
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheCs\obj\Release\LockTheCs.xml
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheCs\obj\Release\LockTheCs.pdb

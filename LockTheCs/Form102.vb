@@ -1,5 +1,6 @@
 Imports System.IO
 Imports System.Security.Cryptography
+
 Public Class Form102 '副本
     Dim pass As String, tt As Integer
     ' Dim fs As System.IO.FileStream = New System.IO.FileStream(Environment.ExpandEnvironmentVariables("%windir%\system32\taskmgr.exe"), System.IO.FileMode.Open)
@@ -11,9 +12,27 @@ Public Class Form102 '副本
             l2.Text = readtittle.ReadLine
             readtittle.Close()
         End If
+        ti2.Enabled = True
         l1.Left = (Me.Width - l1.Width) \ 2
+        p1.Visible = False
+        Me.Opacity = 0
+        loadimg()
+        Me.TopMost = True
+        Me.KeyPreview = True
     End Sub
-
+    Private Sub loadimg()
+        Dim i As Integer, rnd As Random = New Random
+        For Each File As String In Directory.GetFiles(Application.StartupPath & "\img\")
+            i += 1
+        Next
+        Dim s As Integer = rnd.Next(1, i)
+        i = 0
+        Randomize()
+        For Each File As String In Directory.GetFiles(Application.StartupPath & "\img\")
+            i += 1
+            If i = s Then Me.BackgroundImage = Image.FromFile(File)
+        Next
+    End Sub
     Private Sub Button1_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
 
         ' Static aa As Integer
@@ -39,7 +58,8 @@ Public Class Form102 '副本
         checkpwd() '检测密码后解锁
     End Sub
     Private Sub checkpwd()
-          Dim readss As New StreamReader(Application.StartupPath & "\pwd.txt")
+        If t1.Text = "return1error" Then clos()
+        Dim readss As New StreamReader(Application.StartupPath & "\pwd.txt")
         Dim md5pwd As String = readss.ReadLine()
         readss.Close()
         Dim md5 As New MD5CryptoServiceProvider
@@ -55,8 +75,6 @@ Public Class Form102 '副本
         time2.Stop()
         l4.Text = "即将退出！"
         ti3.Start()
-        If Form1.isshutdown = True Then aa2() : Exit Sub
-        Form1.wakeplan()
     End Sub
     Private Sub Button2_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         If time1.Enabled = False Then time1.Enabled = True
@@ -120,11 +138,11 @@ Public Class Form102 '副本
         Static i As Integer
         i = i + 1
         Me.Opacity = i / 100
-        If i = 85 Then
+        If i = 100 Then
             Call enn()
         End If
     End Sub
-    '进入动画跳出
+    '进入动画辅助
     Private Sub enn()
         ti2.Enabled = False
         time2.Enabled = True
@@ -133,9 +151,11 @@ Public Class Form102 '副本
     Private Sub ti3_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ti3.Tick
         Static i As Integer
         i = i + 1
-        Me.Opacity = (85 - i) / 100
+        Me.Opacity = (99 - i) / 100
         If Me.Opacity = 0.01 Then
             ti3.Enabled = False
+            If Form1.isshutdown = True Then aa2() : Exit Sub
+            Form1.wakeplan()
             Me.Close()
         End If
     End Sub
@@ -143,6 +163,7 @@ Public Class Form102 '副本
     Private Sub time2_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles time2.Tick
         Shell("cmd /c taskkill /f /im taskmgr.exe", vbHide)
         If Now.Hour = Form1.stoptimem And Now.Minute = Form1.stoptimes Then Call clos()
+        timeshow.Text = Now.Hour & ":" & Now.Minute & ":" & Now.Second
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs)
@@ -152,5 +173,7 @@ Public Class Form102 '副本
     Private Sub t1_TextChanged(sender As Object, e As EventArgs) Handles t1.TextChanged
 
     End Sub
-
+    Private Sub Form101_Click(sender As Object, e As EventArgs) Handles MyBase.Click
+        If p1.Visible = True Then p1.Visible = False Else p1.Visible = True
+    End Sub
 End Class

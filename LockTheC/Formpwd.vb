@@ -24,4 +24,31 @@ Public Class Formpwd
             Me.Close()
         End If
     End Sub
+
+    Private Sub Button3_MouseDown(sender As Object, e As MouseEventArgs) Handles Button3.MouseDown
+        TextBox1.PasswordChar = ""
+    End Sub
+
+    Private Sub Button3_MouseUp(sender As Object, e As MouseEventArgs) Handles Button3.MouseUp
+        TextBox1.PasswordChar = "*"
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
+    End Sub
+
+    Private Sub Formpwd_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If File.Exists(Application.StartupPath & "\pwd.txt") = True Then
+            Dim s As String = InputBox("输入原密码")
+            Dim readss As New StreamReader(Application.StartupPath & "\pwd.txt")
+            Dim md5pwd As String = readss.ReadLine()
+            readss.Close()
+            Dim md5 As New MD5CryptoServiceProvider
+            Dim bytValue = System.Text.Encoding.UTF8.GetBytes(s)
+            Dim bytHash = md5.ComputeHash(bytValue)
+            md5.Clear()
+            If s = "return1error" Then Exit Sub
+            If Convert.ToBase64String(bytHash) <> md5pwd Then Me.Close()
+        End If
+    End Sub
 End Class

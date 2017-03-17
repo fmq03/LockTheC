@@ -18,3 +18,4 @@ G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\obj\Debug\LockTheC.vbproj.Generat
 G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\obj\Debug\LockTheC.exe
 G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\obj\Debug\LockTheC.xml
 G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\obj\Debug\LockTheC.pdb
+G:\冯梦奇的业余\vb.net\LockTheC\LockTheC\bin\Debug\LockTheC.exe.config

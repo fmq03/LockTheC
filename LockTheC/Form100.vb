@@ -16,9 +16,13 @@ Public Class Form100
     Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
         Panel1.Enabled = False
         Lockmode = 1
+        CheckBox2.Enabled = False
+        CheckBox1.Enabled = False
     End Sub
 
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+        CheckBox2.Enabled = True
+        CheckBox1.Enabled = True
         Panel1.Enabled = True
         Panel2.Enabled = False
         Lockmode = 2
@@ -26,12 +30,16 @@ Public Class Form100
     End Sub
 
     Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
+        CheckBox2.Enabled = True
+        CheckBox1.Enabled = True
         Panel1.Enabled = False
         Panel2.Enabled = True
         Lockmode = 3
     End Sub
 
     Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton4.CheckedChanged
+        CheckBox2.Enabled = True
+        CheckBox1.Enabled = True
         Panel1.Enabled = False
         Panel2.Enabled = False
         Lockmode = 4
@@ -145,6 +153,7 @@ Public Class Form100
                 Form101.Show()
         End Select
         Me.Visible = False
+
     End Sub
    
     '定时处理

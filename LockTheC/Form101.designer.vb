@@ -33,6 +33,7 @@ Partial Class Form101
         Me.ti3 = New System.Windows.Forms.Timer(Me.components)
         Me.l4 = New System.Windows.Forms.Label()
         Me.time2 = New System.Windows.Forms.Timer(Me.components)
+        Me.timeshow = New System.Windows.Forms.Label()
         Me.p1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -46,12 +47,12 @@ Partial Class Form101
         Me.p1.Controls.Add(Me.Label1)
         Me.p1.Location = New System.Drawing.Point(12, 230)
         Me.p1.Name = "p1"
-        Me.p1.Size = New System.Drawing.Size(764, 113)
+        Me.p1.Size = New System.Drawing.Size(315, 113)
         Me.p1.TabIndex = 11
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(673, 68)
+        Me.Button2.Location = New System.Drawing.Point(202, 60)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(86, 34)
         Me.Button2.TabIndex = 9
@@ -60,7 +61,7 @@ Partial Class Form101
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(571, 68)
+        Me.Button1.Location = New System.Drawing.Point(100, 60)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(96, 34)
         Me.Button1.TabIndex = 1
@@ -73,7 +74,7 @@ Partial Class Form101
         Me.t1.Location = New System.Drawing.Point(27, 25)
         Me.t1.Name = "t1"
         Me.t1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.t1.Size = New System.Drawing.Size(720, 29)
+        Me.t1.Size = New System.Drawing.Size(261, 29)
         Me.t1.TabIndex = 7
         '
         'Label1
@@ -87,7 +88,9 @@ Partial Class Form101
         '
         'l3
         '
+        Me.l3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.l3.AutoSize = True
+        Me.l3.BackColor = System.Drawing.Color.Transparent
         Me.l3.Font = New System.Drawing.Font("宋体", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.l3.ForeColor = System.Drawing.Color.DarkGreen
         Me.l3.Location = New System.Drawing.Point(12, 396)
@@ -100,9 +103,9 @@ Partial Class Form101
         '
         Me.l1.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.l1.AutoSize = True
-        Me.l1.BackColor = System.Drawing.SystemColors.Control
+        Me.l1.BackColor = System.Drawing.Color.Transparent
         Me.l1.Font = New System.Drawing.Font("宋体", 20.0!)
-        Me.l1.ForeColor = System.Drawing.Color.Maroon
+        Me.l1.ForeColor = System.Drawing.Color.Red
         Me.l1.Location = New System.Drawing.Point(227, 9)
         Me.l1.Name = "l1"
         Me.l1.Size = New System.Drawing.Size(351, 27)
@@ -116,7 +119,7 @@ Partial Class Form101
         'l2
         '
         Me.l2.AutoSize = True
-        Me.l2.BackColor = System.Drawing.SystemColors.Control
+        Me.l2.BackColor = System.Drawing.Color.Transparent
         Me.l2.Font = New System.Drawing.Font("宋体", 20.0!, System.Drawing.FontStyle.Bold)
         Me.l2.ForeColor = System.Drawing.Color.Red
         Me.l2.Location = New System.Drawing.Point(35, 111)
@@ -135,6 +138,7 @@ Partial Class Form101
         'l4
         '
         Me.l4.AutoSize = True
+        Me.l4.BackColor = System.Drawing.Color.Transparent
         Me.l4.Font = New System.Drawing.Font("宋体", 15.0!)
         Me.l4.ForeColor = System.Drawing.Color.ForestGreen
         Me.l4.Location = New System.Drawing.Point(228, 358)
@@ -146,12 +150,26 @@ Partial Class Form101
         '
         Me.time2.Interval = 1000
         '
+        'timeshow
+        '
+        Me.timeshow.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.timeshow.AutoSize = True
+        Me.timeshow.BackColor = System.Drawing.Color.Transparent
+        Me.timeshow.Font = New System.Drawing.Font("宋体", 18.0!)
+        Me.timeshow.ForeColor = System.Drawing.Color.PowderBlue
+        Me.timeshow.Location = New System.Drawing.Point(615, 388)
+        Me.timeshow.Name = "timeshow"
+        Me.timeshow.Size = New System.Drawing.Size(0, 24)
+        Me.timeshow.TabIndex = 14
+        '
         'Form101
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(788, 424)
         Me.ControlBox = False
+        Me.Controls.Add(Me.timeshow)
         Me.Controls.Add(Me.l4)
         Me.Controls.Add(Me.l2)
         Me.Controls.Add(Me.p1)
@@ -160,7 +178,6 @@ Partial Class Form101
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form101"
-        Me.Opacity = 0.0R
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
@@ -185,4 +202,5 @@ Partial Class Form101
     Friend WithEvents ti3 As System.Windows.Forms.Timer
     Friend WithEvents l4 As System.Windows.Forms.Label
     Friend WithEvents time2 As System.Windows.Forms.Timer
+    Friend WithEvents timeshow As System.Windows.Forms.Label
 End Class
