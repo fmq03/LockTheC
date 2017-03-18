@@ -49,6 +49,7 @@ Partial Class Form100
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -129,9 +130,9 @@ Partial Class Form100
         '
         Me.Button2.Location = New System.Drawing.Point(13, 339)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(161, 23)
+        Me.Button2.Size = New System.Drawing.Size(71, 23)
         Me.Button2.TabIndex = 7
-        Me.Button2.Text = "设置密码"
+        Me.Button2.Text = "传统密码"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
@@ -240,7 +241,7 @@ Partial Class Form100
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
         Me.LinkLabel1.LinkColor = System.Drawing.Color.Black
-        Me.LinkLabel1.Location = New System.Drawing.Point(65, 394)
+        Me.LinkLabel1.Location = New System.Drawing.Point(67, 394)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(53, 12)
         Me.LinkLabel1.TabIndex = 21
@@ -289,12 +290,22 @@ Partial Class Form100
         '
         Me.Timer2.Interval = 1000
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(99, 339)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(74, 23)
+        Me.Button4.TabIndex = 25
+        Me.Button4.Text = "滑动密码"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Form100
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(191, 416)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
@@ -347,5 +358,6 @@ Partial Class Form100
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents Timer2 As System.Windows.Forms.Timer
+    Friend WithEvents Button4 As System.Windows.Forms.Button
 
 End Class

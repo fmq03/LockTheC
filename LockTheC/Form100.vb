@@ -133,6 +133,7 @@ Public Class Form100
                 '    Dim pwdr As New StreamWriter(Application.StartupPath & "\ltittle.txt")
                 '    pwdr.WriteLine(LinTittle.Text)
                 'End If
+                If File.Exists(Application.StartupPath & "\LockTheCs.exe") = False Then MsgBox("找不到LockTheCs副本，请检查是否在文件夹中", MsgBoxStyle.Critical) : End
                 Shell(Application.StartupPath & "\LockTheCs.exe")
                 End
             Case 2
@@ -170,5 +171,9 @@ Public Class Form100
             Form101.Show()
             Timer2.Stop()
         End If
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Formroll.Show()
     End Sub
 End Class

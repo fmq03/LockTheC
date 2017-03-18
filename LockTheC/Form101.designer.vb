@@ -34,6 +34,7 @@ Partial Class Form101
         Me.l4 = New System.Windows.Forms.Label()
         Me.time2 = New System.Windows.Forms.Timer(Me.components)
         Me.timeshow = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.p1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -162,6 +163,16 @@ Partial Class Form101
         Me.timeshow.Size = New System.Drawing.Size(0, 24)
         Me.timeshow.TabIndex = 14
         '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.SpringGreen
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Location = New System.Drawing.Point(465, 203)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(50, 50)
+        Me.Button3.TabIndex = 17
+        Me.Button3.UseVisualStyleBackColor = False
+        '
         'Form101
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -169,6 +180,7 @@ Partial Class Form101
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(788, 424)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.timeshow)
         Me.Controls.Add(Me.l4)
         Me.Controls.Add(Me.l2)
@@ -203,4 +215,5 @@ Partial Class Form101
     Friend WithEvents l4 As System.Windows.Forms.Label
     Friend WithEvents time2 As System.Windows.Forms.Timer
     Friend WithEvents timeshow As System.Windows.Forms.Label
+    Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class

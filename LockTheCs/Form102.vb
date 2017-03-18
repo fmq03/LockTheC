@@ -3,9 +3,9 @@ Imports System.Security.Cryptography
 
 Public Class Form102 '副本
     Dim pass As String, tt As Integer
+    Dim bbx As Integer, bby As Integer
     ' Dim fs As System.IO.FileStream = New System.IO.FileStream(Environment.ExpandEnvironmentVariables("%windir%\system32\taskmgr.exe"), System.IO.FileMode.Open)
     Private Sub Form101_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.KeyPreview = True
         ti2.Enabled = True
         If File.Exists(Application.StartupPath & "\tittle.txt") = True And Form1.isshowtittle = True Then
             Dim readtittle As New StreamReader(Application.StartupPath & "\tittle.txt", System.Text.Encoding.Default)
@@ -15,11 +15,22 @@ Public Class Form102 '副本
         ti2.Enabled = True
         l1.Left = (Me.Width - l1.Width) \ 2
         p1.Visible = False
+        bbx = (Me.Width - Button3.Width) \ 2
+        Button3.Left = bbx
+        bby = (Me.Height - Button3.Height) \ 2
+        Button3.Top = bby
         Me.Opacity = 0
         loadimg()
         Me.TopMost = True
         Me.KeyPreview = True
     End Sub
+    Enum way
+        left
+        right
+        up
+        down
+        er
+    End Enum
     Private Sub loadimg()
         Dim i As Integer, rnd As Random = New Random
         For Each File As String In Directory.GetFiles(Application.StartupPath & "\img\")
@@ -175,5 +186,59 @@ Public Class Form102 '副本
     End Sub
     Private Sub Form101_Click(sender As Object, e As EventArgs) Handles MyBase.Click
         If p1.Visible = True Then p1.Visible = False Else p1.Visible = True
+    End Sub
+    Dim MovBoll As Boolean, lmode As String
+    Dim CurrX As Integer, CurrY As Integer
+    Dim MousX As Integer, MousY As Integer
+    Private Sub Button3_MouseDown(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button3.MouseDown
+        MousX = e.X
+        MousY = e.Y
+        MovBoll = True
+    End Sub
+
+    Private Sub Button3_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button3.MouseMove
+        If MovBoll = True Then
+            CurrX = Button3.Left - MousX + e.X
+            CurrY = Button3.Top - MousY + e.Y
+            Button3.Location = New Point(CurrX, CurrY)
+        End If
+
+    End Sub
+
+    Private Sub Button3_MouseUp(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button3.MouseUp
+        MovBoll = False
+        Dim sx = bbx - CurrX, sy = bby - CurrY
+        Const ee As Single = 1, ex As Single = 1 / ee
+        If sx <> 0 Then
+            Dim chu As Single = sy / sx
+            If sx > 0 And sy > 0 Then
+                If chu < ee Then lmode += CStr(way.right)
+                If chu > ex Then lmode += CStr(way.up)
+            ElseIf sx > 0 And sy < 0 Then
+                If chu > 0 - ee Then lmode += CStr(way.right)
+                If chu < 0 - ex Then lmode += CStr(way.down)
+            ElseIf sx < 0 And sy > 0 Then
+                If chu > 0 - ee Then lmode += CStr(way.left)
+                If chu < 0 - ex Then lmode += CStr(way.up)
+            ElseIf sx < 0 And sy < 0 Then
+                If chu < ee Then lmode += CStr(way.left)
+                If chu > ex Then lmode += CStr(way.down)
+            End If
+        Else
+            If sx = 0 And sy > 0 Then lmode += CStr(way.down)
+            If sx = 0 And sy < 0 Then lmode += CStr(way.up)
+            If sx > 0 And sy = 0 Then lmode += CStr(way.right)
+            If sx < 0 And sy = 0 Then lmode += CStr(way.left)
+        End If
+        Button3.Location = New Point(bbx, bby)
+        Dim md5 As New MD5CryptoServiceProvider
+        Dim bytValue = System.Text.Encoding.UTF8.GetBytes(lmode)
+        Dim bytHash = md5.ComputeHash(bytValue)
+        md5.Clear()
+        Dim s As String = Convert.ToBase64String(bytHash)
+        Dim ss As New StreamReader(Application.StartupPath & "\pwd.txt")
+        ss.ReadLine()
+        Dim bz As String = ss.ReadLine()
+        If s = bz Then clos()
     End Sub
 End Class
