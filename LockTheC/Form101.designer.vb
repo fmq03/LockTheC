@@ -35,6 +35,7 @@ Partial Class Form101
         Me.time2 = New System.Windows.Forms.Timer(Me.components)
         Me.timeshow = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.p1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -42,6 +43,7 @@ Partial Class Form101
         '
         Me.p1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption
         Me.p1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.p1.Controls.Add(Me.Button4)
         Me.p1.Controls.Add(Me.Button2)
         Me.p1.Controls.Add(Me.Button1)
         Me.p1.Controls.Add(Me.t1)
@@ -173,6 +175,15 @@ Partial Class Form101
         Me.Button3.TabIndex = 17
         Me.Button3.UseVisualStyleBackColor = False
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(27, 60)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(67, 34)
+        Me.Button4.TabIndex = 10
+        Me.Button4.Text = "清除"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Form101
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -216,4 +227,5 @@ Partial Class Form101
     Friend WithEvents time2 As System.Windows.Forms.Timer
     Friend WithEvents timeshow As System.Windows.Forms.Label
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents Button4 As System.Windows.Forms.Button
 End Class

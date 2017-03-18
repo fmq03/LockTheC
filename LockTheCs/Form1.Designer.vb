@@ -25,6 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Timer1
@@ -34,17 +35,32 @@ Partial Class Form1
         'Timer2
         '
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("宋体", 11.0!)
+        Me.Label1.Location = New System.Drawing.Point(13, 4)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(97, 15)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "即将开始计时"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(128, 23)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label1)
+        Me.MaximumSize = New System.Drawing.Size(144, 39)
+        Me.MinimumSize = New System.Drawing.Size(144, 39)
         Me.Name = "Form1"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents Timer2 As System.Windows.Forms.Timer
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class

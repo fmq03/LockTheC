@@ -6,7 +6,6 @@ Public Class Form102 '副本
     Dim bbx As Integer, bby As Integer
     ' Dim fs As System.IO.FileStream = New System.IO.FileStream(Environment.ExpandEnvironmentVariables("%windir%\system32\taskmgr.exe"), System.IO.FileMode.Open)
     Private Sub Form101_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        ti2.Enabled = True
         If File.Exists(Application.StartupPath & "\tittle.txt") = True And Form1.isshowtittle = True Then
             Dim readtittle As New StreamReader(Application.StartupPath & "\tittle.txt", System.Text.Encoding.Default)
             l2.Text = readtittle.ReadLine
@@ -15,6 +14,7 @@ Public Class Form102 '副本
         ti2.Enabled = True
         l1.Left = (Me.Width - l1.Width) \ 2
         p1.Visible = False
+        Button3.Visible = False
         bbx = (Me.Width - Button3.Width) \ 2
         Button3.Left = bbx
         bby = (Me.Height - Button3.Height) \ 2
@@ -185,8 +185,10 @@ Public Class Form102 '副本
 
     End Sub
     Private Sub Form101_Click(sender As Object, e As EventArgs) Handles MyBase.Click
-        If p1.Visible = True Then p1.Visible = False Else p1.Visible = True
+        If p1.Visible = True Then p1.Visible = False Else p1.Visible = True : lmode = "" : Button4.Visible = False
+        If Button3.Visible = True Then Button3.Visible = False Else Button3.Visible = True
     End Sub
+    '滑动解锁代码
     Dim MovBoll As Boolean, lmode As String
     Dim CurrX As Integer, CurrY As Integer
     Dim MousX As Integer, MousY As Integer
@@ -194,6 +196,7 @@ Public Class Form102 '副本
         MousX = e.X
         MousY = e.Y
         MovBoll = True
+        Button4.Visible = True
     End Sub
 
     Private Sub Button3_MouseMove(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Button3.MouseMove
@@ -209,7 +212,7 @@ Public Class Form102 '副本
         MovBoll = False
         Dim sx = bbx - CurrX, sy = bby - CurrY
         Const ee As Single = 1, ex As Single = 1 / ee
-        If sx <> 0 Then
+        If sx <> 0 And sy <> 0 Then
             Dim chu As Single = sy / sx
             If sx > 0 And sy > 0 Then
                 If chu < ee Then lmode += CStr(way.right)
@@ -240,5 +243,9 @@ Public Class Form102 '副本
         ss.ReadLine()
         Dim bz As String = ss.ReadLine()
         If s = bz Then clos()
+    End Sub
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        lmode = ""
+        Button4.Visible = False
     End Sub
 End Class

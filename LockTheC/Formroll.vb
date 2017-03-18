@@ -46,7 +46,7 @@ Public Class Formroll
         MovBoll = False
         Dim sx = 165 - CurrX, sy = 150 - CurrY
         Const ee As Single = 1, ex As Single = 1 / ee
-        If sx <> 0 Then
+        If sx <> 0 And sy <> 0 Then
             Dim chu As Single = sy / sx
             If sx > 0 And sy > 0 Then
                 If chu < ee Then lmode += CStr(way.right)
